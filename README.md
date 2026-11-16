@@ -7,6 +7,8 @@ Projet Big Data ING3 (Baptiste & Maximilien). Le dépôt contient une **démo qu
 chantier simulé, caméras fixes et body-cams avec réseau asynchrone, Kafka, traitement temps réel
 avec watermark, data lake Parquet, analytics SQL, viewer 3D live/replay et export d'un dataset robotique.
 
+![jumeau numérique](docs/screenshot.png)
+
 ![architecture](docs/architecture.svg)
 
 ---
