@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>ConStruct-AI · Jumeau numérique</title>
+  <link rel="stylesheet" href="/web/style.css">
+  <script type="importmap">{ "imports": { "three": "/web/vendor/three.module.js" } }</script>
+</head>
+<body>
+  <div id="scene"></div>
+
+  <header id="topbar">
+    <div class="brand"><span class="logo">◆</span> ConStruct<b>AI</b><span class="sub">jumeau numérique de chantier</span></div>
+    <div class="clock"><span id="site-id"></span><span id="clock">—</span></div>
+    <div class="badges">
+      <span id="mode-badge" class="badge live">● LIVE</span>
+      <span id="bus-badge" class="badge">bus</span>
+    </div>
+  </header>
+
+  <aside id="left" class="panel-col">
+    <section class="panel">
+      <h2>Avancement</h2>
+      <div class="hero"><span id="pct">0</span><small>%</small></div>
+      <div class="bar"><i id="pct-bar"></i></div>
+      <div class="kv"><span>Parpaings posés</span><b id="built">0 / 0</b></div>
+      <div class="kv"><span>Cadence</span><b id="rate">—</b></div>
+      <div class="kv"><span>Fin estimée</span><b id="eta">—</b></div>
+      <div id="walls" class="walls"></div>
+    </section>
+    <section class="panel">
+      <h2>Équipe <small>rôles déduits par l'IA</small></h2>
+      <div id="workers"></div>
+    </section>
+  </aside>
+
+  <aside id="right" class="panel-col">
+    <section class="panel">
+      <h2>Pipeline Big Data <small id="bus-kind"></small></h2>
+      <div id="pipeline"></div>
+    </section>
+    <section class="panel grow">
+      <h2>Événements</h2>
+      <div id="events"></div>
+    </section>
+  </aside>
+
+  <div id="pov-banner" hidden></div>
+
+  <footer id="bottombar">
+    <div class="controls">
+      <button id="btn-play" title="Lecture / pause">❚❚</button>
+      <div class="seg" id="speeds">
+        <button data-speed="1">x1</button><button data-speed="5">x5</button>
+        <button data-speed="10">x10</button><button data-speed="20">x20</button><button data-speed="40">x40</button>
+      </div>
+      <button id="btn-live" class="accent">LIVE</button>
+    </div>
+    <div class="timeline">
+      <input id="timeline" type="range" min="0" max="1" step="0.1" value="0">
+      <div class="tl-labels"><span>Début du chantier</span><span id="tl-cur"></span><span id="tl-end"></span></div>
+    </div>
+    <div class="controls">
+      <div class="seg" id="views">
+        <button data-view="orbit" class="on">Global</button>
+        <button data-view="follow">Suivre</button>
+        <button data-view="pov">POV</button>
+      </div>
+      <div class="seg" id="layers">
+        <button data-layer="cams">Caméras</button>
+        <button data-layer="trails">Trajets</button>
+        <button data-layer="heat">Heatmap</button>
+        <button data-layer="bim" class="on">BIM</button>
+      </div>
+      <button id="btn-analytics">Analytics</button>
+      <button id="btn-export" class="accent">Dataset robotique</button>
+    </div>
+  </footer>
+
+  <div id="modal" hidden><div class="modal-box"><button class="close" id="modal-close">✕</button><div id="modal-body"></div></div></div>
+  <div id="tooltip" hidden></div>
+
+  <script type="module" src="/web/app.js"></script>
+</body>
+</html>

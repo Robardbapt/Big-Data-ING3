@@ -1,0 +1,4 @@
+# Optionnel : brancher une vraie vidéo (python 3.10 – 3.12 recommandé pour mediapipe)
+-r requirements.txt
+opencv-python
+mediapipe
